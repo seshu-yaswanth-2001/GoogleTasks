@@ -1,0 +1,25 @@
+.inputs {
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input {
+  border: none;
+  border-bottom: 2px solid white;
+  background: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #fefefe;
+  resize: none;
+}
+.add {
+  margin-top: 20px;
+  background-color: #37393b;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fefefe;
+  font-size: 14px;
+  cursor: pointer;
+}

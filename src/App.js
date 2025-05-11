@@ -1,4 +1,16 @@
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import "./app.css";
+import Card from "./Components/Card/Card";
+
 const App = () => {
-  return <h1>App</h1>;
+  return (
+    <div>
+      <Navbar />
+      <br />
+      <Card />
+    </div>
+  );
 };
+
 export default App;
