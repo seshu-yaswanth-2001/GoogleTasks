@@ -3,7 +3,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <navbar className="navbar">
+    <nav className="navbar">
       <div className="menu">
         <span></span>
         <span></span>
@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="profile">
         <p>SK</p>
       </div>
-    </navbar>
+    </nav>
   );
 };
 

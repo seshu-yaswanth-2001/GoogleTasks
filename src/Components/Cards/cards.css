@@ -1,0 +1,31 @@
+.card {
+  width: 300px;
+  background-color: #4d454481;
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-align: justify;
+  font-size: 14px;
+}
+.card:hover {
+  background-color: #65616181;
+}
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tools > .date {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(110, 110, 110, 0.9);
+}
+.tools > .trashButton {
+  border: none;
+  padding: 10px;
+  background: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+.task {
+  margin: 20px 0;
+}

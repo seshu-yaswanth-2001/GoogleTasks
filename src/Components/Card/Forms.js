@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./form.css";
 
-const Forms = ({ inputText, setInputText, tasks, setTasks }) => {
+const Forms = ({ inputText, setInputText, setTasks, counter, setCounter }) => {
   const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
@@ -30,9 +30,14 @@ const Forms = ({ inputText, setInputText, tasks, setTasks }) => {
   }, [submit]);
 
   const addTask = () => {
-    const taskToDo = { ...inputText };
-    if (taskToDo.title && taskToDo.description) {
+    if (inputText.title && inputText.description) {
+      const taskToDo = {
+        id: counter,
+        ...inputText,
+      };
+
       setTasks((prev) => [...prev, taskToDo]);
+      setCounter((prev) => prev + 1);
       setInputText({
         title: "",
         description: "",
