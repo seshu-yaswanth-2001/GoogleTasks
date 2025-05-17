@@ -25,24 +25,21 @@ const Card = () => {
 
   const handleFilter = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
+    setClicked(!clicked);
   };
 
-  useEffect(() => {
-    console.log(tasks);
-  }, [tasks]);
-
   // It will get the data from the local storage
-  // useEffect(() => {
-  //   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-  //   if (storedTasks) {
-  //     setTasks(storedTasks);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, []);
 
   // It will set the data to local storage
-  // useEffect(() => {
-  //   localStorage.setItem("tasks", JSON.stringify(tasks));
-  // }, [tasks]);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <>
