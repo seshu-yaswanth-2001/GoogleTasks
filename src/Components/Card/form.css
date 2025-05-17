@@ -1,29 +1,121 @@
 .inputs {
-  margin: 30px 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.back {
-  
-}
-.input {
-  border: none;
-  border-bottom: 2px solid white;
-  background: none;
-  font-size: 16px;
-  padding: 10px 20px;
-  color: #fefefe;
-  resize: none;
-}
-.add {
-  margin-top: 20px;
-  background-color: #37393b;
-  border: none;
-  border-radius: 10px;
   padding: 10px;
-  color: #fefefe;
-  font-size: 14px;
-  cursor: pointer;
+  width: 100%;
+  position: relative;
 }
 
+.input-container,
+.textarea-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: #efefef;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.title,
+.description {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.description {
+  top: 25px;
+  transform: none;
+}
+
+/* Floating label effect */
+.textarea:focus ~ .description,
+.textarea:not(:placeholder-shown) ~ .description {
+  top: -10px;
+  left: 8px;
+  font-size: 0.8rem;
+  color: #007bff;
+  background: #2f2f2f;
+  padding: 0 4px;
+}
+.input:focus ~ .title,
+.input:not(:placeholder-shown) ~ .title {
+  top: 0px;
+  left: 8px;
+  font-size: 0.8rem;
+  color: #007bff;
+  background: #2f2f2f;
+  padding: 0 4px;
+}
+
+.add {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.add:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add:active {
+  transform: translateY(0);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .inputs {
+    padding: 1rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 10px;
+  }
+
+  .add {
+    padding: 10px 20px;
+  }
+}

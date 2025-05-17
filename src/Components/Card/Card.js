@@ -20,8 +20,16 @@ const Card = () => {
   const [tasks, setTasks] = useState([]);
 
   const handleClick = () => {
-    setClicked(true);
+    setClicked(!clicked);
   };
+
+  const handleFilter = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  useEffect(() => {
+    console.log(tasks);
+  }, [tasks]);
 
   // It will get the data from the local storage
   // useEffect(() => {
@@ -58,7 +66,7 @@ const Card = () => {
               </button>
               <button className="mobileButton" onClick={handleClick}>
                 <FontAwesomeIcon className="iconPlus" icon={faPlusSquare} />
-                Create Task
+                Add a Task
               </button>
               <div className="imageWrapper">
                 <img className="taskImg" src={task} alt="taskImg" />
@@ -70,11 +78,7 @@ const Card = () => {
       ) : (
         <div className="cards">
           {tasks.map((task) => (
-            <Cards
-              key={task.id}
-              title={task.title}
-              description={task.description}
-            />
+            <Cards key={task.id} tasks={task} handleFilter={handleFilter} />
           ))}
         </div>
       )}

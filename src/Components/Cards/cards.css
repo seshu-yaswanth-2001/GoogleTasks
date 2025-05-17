@@ -20,11 +20,16 @@
 }
 .tools > .trashButton {
   border: none;
-  padding: 10px;
+  padding: 5px;
   background: none;
   color: red;
   font-size: 20px;
   cursor: pointer;
+}
+.tools > .trashButton:hover {
+  background-color: red;
+  color: white;
+  border-radius: 10%;
 }
 .task {
   margin: 20px 0;
